@@ -52,5 +52,22 @@ class ProductServiceTest {
         Assertions.assertEquals(0,response)
     }
 
+    @Test
+    fun ultimoDigito(){
+        val response=productService.ultimoDigito("0105881478")
+        Assertions.assertEquals(8,response)
+    }
+
+    @Test
+    fun cedulaValida(){
+        val response=productService.validarTotal("0105881478")
+        Assertions.assertEquals(true,response)
+    }
+    @Test
+    fun cedulaInvalida(){
+        val response=productService.validarTotal("0105881476")
+        Assertions.assertEquals(false,response)
+    }
+
 
 }

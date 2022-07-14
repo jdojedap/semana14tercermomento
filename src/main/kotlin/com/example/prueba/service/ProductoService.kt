@@ -78,26 +78,33 @@ class ProductoService {
 
     }
 
-    fun ultimoDigito(){
-    }
+    fun ultimoDigito(cedula: String): Int{
 
+        val ultimo = cedula.last().toString()
+        val response = Integer.parseInt(ultimo)
 
+        return response
 
-
-
-
-    fun validarCedula (cedula: String): Boolean{ // buscar la decena superior
-        //val sum = sumaValores(cedula)
-        //val resta = findDecenaSuperior(sum)
-        //obtener decimo digito de la cedula[9]
-        // si la resta es igual al decimo digito entonces la cedula es valida
-        //caso contrario invalida
-
-
-        return  true
 
 
     }
+
+    fun validarTotal(cedula: String):Boolean{
+
+        val suma= sumaValores("0105881478")
+
+        val resta = findDecenaSuperior(suma.toInt())
+
+        val ultimo = ultimoDigito(cedula)
+
+        return resta== ultimo
+
+
+
+
+    }
+
+
 
 
 
